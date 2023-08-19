@@ -1,18 +1,15 @@
-import {useSelector} from 'react-redux'
+import { useSelector } from "react-redux";
 export function Todo() {
-    const store = useSelector(store => {
-        return store
-    })
+  const todos = useSelector((store) => {
+    return store.todo;
+  });
+  console.log(todos);
 
-    console.log(store)
-    return (
-        <ul>
-            <li>
-                Fazer Café
-            </li>
-            <li>
-                Jogar overlixo
-            </li>
-        </ul>
-    )
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo}> {todo}</li>
+      ))}
+    </ul>
+  );
 }
