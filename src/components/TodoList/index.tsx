@@ -1,6 +1,7 @@
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
+import { useAppSelector } from "../../store";
 export function Todo() {
-  const todos = useSelector((store) => {
+  const todos = useAppSelector((store) => {
     return store.todo;
   });
   console.log(todos);
