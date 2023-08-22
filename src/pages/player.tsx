@@ -28,7 +28,7 @@ export function Player() {
                 />
             </div>
           </div>
-          <aside className="bg-zing-900 h-[600px] w-80 border-l border-zinc-800">
+          <aside className="bg-zing-900  w-80 border-l border-zinc-800">
             <div>
               <button className="flex w-full items-center gap-3 bg-zinc-800 p-4 ">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-950 text-sm">
