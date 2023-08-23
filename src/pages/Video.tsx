@@ -20,9 +20,9 @@ export function Video() {
             </div>
           </div>
           <aside className=" bg-zing-900 absolute bottom-0  right-0 top-0 w-80 divide-y-2 divide-zinc-900 overflow-y-scroll border-l border-zinc-800 scrollbar scrollbar-thin scrollbar-track-zinc-950 scrollbar-thumb-zinc-700">
-            <Modules />
-            <Modules />
-            <Modules />
+            <Modules title="Desvendando o Redux"  lessonsAmount={3} moduleIndex={0}/>
+            <Modules title="Fundamentos do Redux"  lessonsAmount={3} moduleIndex={1}/>
+            <Modules title="Criando a UI do app"  lessonsAmount={3} moduleIndex={2}/>
           </aside>
         </main>
       </div>
