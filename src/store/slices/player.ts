@@ -57,7 +57,11 @@ const playerSLice = createSlice({
         },
       ],
     },
+    currentModuleIndex: 0,
+    currentLessonIndex : 0,
   },
+
+ 
   reducers: {},
 });
 
