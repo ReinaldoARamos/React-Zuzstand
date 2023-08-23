@@ -1,6 +1,6 @@
 import ReactPlayer from "react-player";
 import { Header } from "../components/Header";
-import { SideBar } from "../components/Aside";
+import { Modules } from "../components/Modules";
 export function Video() {
   return (
     <div className="flex h-screen items-center justify-center bg-zinc-950 text-zinc-50">
@@ -19,7 +19,11 @@ export function Video() {
               />
             </div>
           </div>
-          <SideBar />
+          <aside className=" bg-zing-900 absolute bottom-0  right-0 top-0 w-80 divide-y-2 divide-zinc-900 overflow-y-scroll border-l border-zinc-800 scrollbar scrollbar-thin scrollbar-track-zinc-950 scrollbar-thumb-zinc-700">
+            <Modules />
+            <Modules />
+            <Modules />
+          </aside>
         </main>
       </div>
     </div>
