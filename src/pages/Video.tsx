@@ -1,4 +1,3 @@
-import ReactPlayer from "react-player";
 import { Header } from "../components/Header";
 import { Modules } from "../components/Modules";
 import { useAppSelector } from "../store";

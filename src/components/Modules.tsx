@@ -24,10 +24,10 @@ export function Modules({ title, lessonsAmount, moduleIndex }: ModuleProps) {
           <strong>{title}</strong>
           <span className="text-xs text-zinc-400">{lessonsAmount} aulas</span>
         </div>
-        <ChevronDown className="ml-auto h-6 w-6 text-zinc-400 group-data-[state=open]:rotate-180 transition-transform" />
+        <ChevronDown className="ml-auto h-6 w-6 text-zinc-400 group-data-[state=open]:rotate-180 transition-transform duration-300" />
       </Collapsable.Trigger>
       <Collapsable.Content>
-        <nav className="relative flex flex-col gap-4 p-6 transition">
+        <nav className="relative flex flex-col gap-4 p-6 transition duration-300">
           {lessons.map((lesson, lessonIndex) => {
             return (
               <Lesson minutesAmount={lesson.duration} title={lesson.title} onPlay={() => dispatch(play([moduleIndex, lessonIndex]))} />
