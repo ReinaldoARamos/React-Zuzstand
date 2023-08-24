@@ -2,8 +2,16 @@ import { Header } from "../components/Header";
 import { Modules } from "../components/Modules";
 import { useAppSelector } from "../store";
 import { Player } from "../components/Player";
+import { useCurrentLesson } from "../store/slices/player";
+import { useEffect } from "react";
 export function Video() {
   const modules = useAppSelector((state) => state.player.course.modules);
+
+  const {currentLesson } = useCurrentLesson()
+
+  useEffect(() => {
+      document.title = currentLesson.title
+  }, [currentLesson])
   return (
     <div className="flex h-screen items-center justify-center bg-zinc-950 text-zinc-50">
       {/*Header* */}
