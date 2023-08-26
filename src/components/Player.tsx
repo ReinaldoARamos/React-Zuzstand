@@ -10,6 +10,10 @@ export function Player() {
   function handlePlayNextVideo() {
     dispatch(next())
   }
+
+  if(!currentLesson) {
+    return null
+  }
   return (
     <div className="flex-1  ">
       <div className="bg-zing-950 aspect-video w-full">

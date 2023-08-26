@@ -1,15 +1,20 @@
 import { MessageCircle } from "lucide-react";
 import { useAppSelector } from "../store";
 import { useCurrentLesson } from "../store/slices/player";
+import { current } from "@reduxjs/toolkit";
 
 export function Header() {
 const {currentLesson, currentModule} = useCurrentLesson()
+
+if(!currentLesson || !currentLesson){
+  return null
+}
   return (
     <div className="flex items-center justify-between">
       <div className="flex flex-col gap-1">
-        <h1 className="text-xl font-bold"> {currentLesson.title}</h1>
+        <h1 className="text-xl font-bold"> {currentLesson?.title}</h1>
         <span className="text-sm text-zinc-100">
-          {`Módulo: ${currentModule.title}`}
+          {`Módulo: ${currentModule?.title}`}
         </span>
       </div>
 

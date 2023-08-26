@@ -2,15 +2,22 @@ import { Header } from "../components/Header";
 import { Modules } from "../components/Modules";
 import { useAppSelector } from "../store";
 import { Player } from "../components/Player";
-import { useCurrentLesson } from "../store/slices/player";
+import { start, useCurrentLesson } from "../store/slices/player";
 import { useEffect } from "react";
+import { api } from "../lib/axios";
+import { useDispatch } from "react-redux";
 export function Video() {
-  const modules = useAppSelector((state) => state.player.course.modules);
-
+  const modules = useAppSelector((state) => state.player.course?.modules);
+  const dispatch  = useDispatch();
   const {currentLesson } = useCurrentLesson()
 
   useEffect(() => {
-      document.title = currentLesson.title
+    if(currentLesson){
+      document.title = `Assistindo: ${currentLesson.title}`
+    }
+      api.get('courses/1').then((response) => {
+        dispatch(start(response.data))
+      })
   }, [currentLesson])
   return (
     <div className="flex h-screen items-center justify-center bg-zinc-950 text-zinc-50">
@@ -25,7 +32,7 @@ export function Video() {
             </div>
           </div>
           <aside className=" bg-zing-900 absolute bottom-0  right-0 top-0 w-80 divide-y-2 divide-zinc-900 overflow-y-scroll border-l border-zinc-800 scrollbar scrollbar-thin scrollbar-track-zinc-950 scrollbar-thumb-zinc-700">
-            {modules.map((module, index) => {
+            {modules && modules.map((module, index) => {
               return (
                 <Modules
                   title={module.title}
