@@ -2,17 +2,17 @@ import { Header } from "../components/Header";
 import { Modules } from "../components/Modules";
 import { useAppDispatch, useAppSelector } from "../store";
 import { Player } from "../components/Player";
-import { loadCourse, start, useCurrentLesson } from "../store/slices/player";
+import { loadCourse, useCurrentLesson } from "../store/slices/player";
 import { useEffect } from "react";
 
 export function Video() {
   const modules = useAppSelector((state) => state.player.course?.modules);
   const dispatch = useAppDispatch()
   const {currentLesson } = useCurrentLesson()
-
+  
   useEffect(() => {
     dispatch(loadCourse())
-  })
+  }, [])
   
   return (
     <div className="flex h-screen items-center justify-center bg-zinc-950 text-zinc-50">
